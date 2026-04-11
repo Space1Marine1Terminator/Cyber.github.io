@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Анкета</title>
+	<style type="text/css">
+	p
+	{
+		color:orange;
+
+	}
+	body 
+	{
+		font-family: Arial,sans-serif;
+		background-color:lightblue;
+		text-align: center;
+	}
+	h1
+	{
+		color: #ff6b6b;
+	}
+	form
+	{
+		max-width: 500px;
+		background: white;
+		margin: 0 auto;
+		padding: 20px;
+		border-radius: 15px;
+		box-shadow: 0 0 10px rgba(0,0,0,0.2)
+	}
+	input,select
+	{
+		width: 100%;
+		padding: 5px;
+		margin: 5px 0;
+		border: 1px solid red;
+		border-radius: 5px;
+	}
+	button
+	{
+		background: #ff6b6b;
+		color: white;
+		border: none;
+		padding: 10px 20px;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+	button:hover
+	{
+		background: #ff5b5b;
+	}
+
+
+	</style>
+</head>
+<body>
+<h1> Анкета </h1>
+<form>
+<font size=4>
+<p>Имя пользователя</p>
+<input type="text" name="" placeholder="Введите имя">
+
+<p>Пароль пользователя</p>
+<input type="password" name="" placeholder="Введите пароль">
+
+<p>Возраст существа</p>
+<input type="number" name="" placeholder="Возраст" min=20000000 max=180000000>
+
+<p>Вид существа</p>
+<input type="radio" name="r">Обитает на спутнике Юпитера - Европе<br>
+<input type="radio" name="r">Обитает на спутнике Юпитера - Европе<br>
+<input type="radio" name="r">Обитает на спутнике Юпитера - Европе<br>
+
+<p>Способности существа</p>
+<input type="checkbox" name="">Грызет вашу подводную лодку?<br>
+<input type="checkbox" name="">ОН ОГРОМНЫЙ<br>
+<input type="checkbox" name="">Живучий<br>
+<input type="checkbox" name="">EMI cигналы, ломающие проводку<br>
+<input type="checkbox" name="">У него броня??<br>
+</font>
+<br>
+<button>Отправить</button>
+
+</form>
+</body>
+</html>
