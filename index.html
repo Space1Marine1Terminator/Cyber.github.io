@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Thalamus party with blackjack</title>
 <style>
 *{
     box-sizing: border-box;
@@ -62,9 +62,174 @@ width:100%;
     background-color:rgb(21, 255, 255);
  }
 }
+
+body
+{
+margin:0;
+padding-top:80px;
+}
+.top-nav
+{
+    background:linear-gradient(135deg,#1ce9fc,#01e8fd,#1ce9fc);
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+}
+.nav-container
+{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo
+{
+    color:rgb(3, 72, 91);
+    font-size: 24px;
+    font-weight: bold;
+    padding:15px 0;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.logo:hover
+{
+    transform: scale(1.05);
+}
+.nav-links
+{
+    display: flex;
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+.nav-links li
+{
+margin:0;
+}
+.nav-links a
+{
+    display: block;
+    color:rgb(0, 90, 108);
+    text-decoration: none;
+    padding: 20px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.nav-links a:hover
+{
+    background-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.burger
+{
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.burger span
+{
+    width:28px;
+    height: 3px;
+    background: white;
+    margin:4px 0;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.burger.active span:nth-child(1)
+{
+transform: rotate(45deg) translate(5px);
+}
+
+.burger.active span:nth-child(2)
+{
+opacity: 0;
+}
+
+.burger.active span:nth-child(3)
+{
+transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.nav-links
+{
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh-70px);
+    background: aquamarine;
+    flex-direction: column;
+    align-items: center;
+    transition: left 0.3s ease;
+    padding: 20px 0;
+}
+
+.nav-links.active
+{
+    left: 0;
+}
+
+.nav-links li
+{
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid aqua;
+}
+
+.nav-links a
+{
+    padding: 20px;
+    font-size: 20px;
+}
+
+.nav-links a:hover
+{
+    background-color: #1ce9fc;
+    transform: translateX(10px);
+}
+
+
+@media screen and (max-width:900px) 
+{
+    .burger
+    {display: flex;}
+}
 </style>
 </head>
 <body>
+
+<nav class="top-nav">
+<div class="nav-container">
+<a href="6.html" class="logo">Главная</a>
+<div class="burger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+<ul class="nav-links" id="navLinks">
+<li><a href="7.1.html">Анкета</a></li>
+<li><a href="galireyayaaayayayayya.html">Галерея</a></li>
+<li><a href="11.html">Состав и цена</a></li>
+<li><a href="404.html">О нас</a></li>
+</ul>
+</nav>
+
 <section>
 <h1>БАРОТРАВМА</h1>
 <hr>
@@ -160,5 +325,44 @@ width:100%;
     </div>
 
 
+
+<script>
+// Функция для открытия/закрытия меню на телефоне
+function toggleMenu() {
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    burger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+}
+
+// Функция для закрытия меню
+function closeMenu() {
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (burger && navLinks) {
+        burger.classList.remove('active');
+        navLinks.classList.remove('active');
+    }
+}
+
+// Закрываем меню при клике на ссылку (на телефоне)
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+        if (window.innerWidth <= 900) {
+            closeMenu();
+        }
+    });
+});
+
+// При изменении размера окна закрываем меню
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 900) {
+        closeMenu();
+    }
+});
+</script>
 </section>
+</body>
 </html>
